@@ -20,6 +20,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { useAllDashboardData } from "../../hooks/useDashboard";
+import RecentActivity from "../../components/dashboard/RecentActivity";
 
 const Dashboard = () => {
   // Fetch all dashboard data using React Query
@@ -102,8 +103,8 @@ const Dashboard = () => {
         />
       </div>
 
-      {/* Charts Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {/* Charts and Activity Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         {/* Applications by Category Chart */}
         <ChartCard
           title="Applications by Category"
@@ -169,6 +170,10 @@ const Dashboard = () => {
             </div>
           </div>
         </ChartCard>
+      </div>
+      <div className="grid grid-cols-1 gap-6 mb-8">
+        {/* Recent Activity */}
+        <RecentActivity />
       </div>
     </div>
   );
